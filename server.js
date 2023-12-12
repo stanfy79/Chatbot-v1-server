@@ -8,8 +8,8 @@ app.use(express.json());
 
 app.post('/api/proxy', async (req, res) => {
   try {
-    const apiKey = 'your_api_key'; // Replace with your actual API key
-    const apiUrl = 'https://api.example.com'; // Replace with the external API URL
+    const apiKey = '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'; // Replace with your actual API key
+    const apiUrl = 'https://safiny-387ba-default-rtdb.firebaseio.com/'; // Replace with the external API URL
 
     const response = await axios({
       method: req.body.method, // Assuming the client sends the HTTP method (GET, POST, etc.)
@@ -30,3 +30,4 @@ app.post('/api/proxy', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
