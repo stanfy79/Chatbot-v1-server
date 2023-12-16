@@ -1,34 +1,21 @@
 const express = require('express');
 const axios = require('axios');
-
+const cors = require('cors')
 const app = express();
-const PORT = 5000;
 
 app.use(express.json());
+app.use(cors());
+// Backend code (Node.js with Express)
 
-app.post('/api/proxy', async (req, res) => {
-  try {
-    const apiKey = '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'; // Replace with your actual API key
-    const apiUrl = 'https://stanfy79.github.io/Chatbot-v1'; // Replace with the external API URL
-
-    const response = await axios({
-      method: req.body.method, // Assuming the client sends the HTTP method (GET, POST, etc.)
-      url: `${apiUrl}${req.body.path}`,
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      data: req.body.data,
-    });
-
-    res.json(response.data);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+// Define a route to handle GET requests
+app.get('/data-endpoint', (req, res) => {
+  // Dummy data for illustration purposes
+  const data = { message: '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' };
+  res.json(data);
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-
