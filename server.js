@@ -9,7 +9,7 @@ app.use(express.json());
 app.post('/api/proxy', async (req, res) => {
   try {
     const apiKey = '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'; // Replace with your actual API key
-    const apiUrl = 'https://safiny-387ba-default-rtdb.firebaseio.com/'; // Replace with the external API URL
+    const apiUrl = 'https://stanfy79.github.io/Chatbot-v1'; // Replace with the external API URL
 
     const response = await axios({
       method: req.body.method, // Assuming the client sends the HTTP method (GET, POST, etc.)
@@ -26,6 +26,10 @@ app.post('/api/proxy', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/main.html");
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
