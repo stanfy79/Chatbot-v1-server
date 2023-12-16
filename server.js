@@ -27,9 +27,6 @@ app.post('/api/proxy', async (req, res) => {
   }
 });
 
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/main.html");
-})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
