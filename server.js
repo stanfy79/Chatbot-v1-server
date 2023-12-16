@@ -8,7 +8,7 @@ app.use(cors());
 // Backend code (Node.js with Express)
 
 // Define a route to handle GET requests
-app.get('/data-endpoint', (req, res) => {
+app.get('/', (req, res) => {
   // Dummy data for illustration purposes
   const data = { message: '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' };
   res.json(data);
