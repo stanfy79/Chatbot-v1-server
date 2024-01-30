@@ -10,7 +10,7 @@ app.use(cors());
 // Define a route to handle GET requests
 app.get('/', (req, res) => {
   // Dummy data for illustration purposes
-  const data = { message: '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' };
+  const data = { message: 'your key' };
   res.json(data);
 });
 
